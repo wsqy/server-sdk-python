@@ -29,6 +29,12 @@ class Example(unittest.TestCase):
         self.assertTrue('code' in r.result)
         self.assertEqual(r.result['code'], 200)
 
+    def test_info(self):
+        r = self.rcloud.User.info(userId='userId1')
+        self.log('info', r)
+        self.assertTrue('code' in r.result)
+        self.assertEqual(r.result['code'], 200)
+
     def test_refresh(self):
         r = self.rcloud.User.refresh(
             userId='userId1',
